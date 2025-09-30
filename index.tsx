@@ -1455,7 +1455,7 @@ async function handleGenerateBackgroundPromptClick(suggestion: string = "") {
     updateChangeBackgroundBtnState();
 
     try {
-        const ai = new GoogleGenAI({apiKey: process.env.API_KEY});
+        const ai = new GoogleGenerativeAI({key: import.meta.env.VITE_GEMINI_API_KEY});
         const base64 = originalImage.base64;
 
         const imagePart = {
